@@ -218,6 +218,7 @@ impl GrandSlam {
             .add_root_certificate(cert)
             .http1_title_case_headers()
             .danger_accept_invalid_certs(debug)
+            .pool_max_idle_per_host(0)
             .connection_verbose(debug)
             .build()?;
         #[cfg(feature = "wasm")]
